@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <utility>
 #include "button.hpp"
 #include "renderer.hpp"
 
@@ -9,7 +10,7 @@ sf::RenderWindow window(sf::VideoMode(640, 480), "SFML works!");
 
 Renderer renderer(window);
 
-void update(sf::RenderWindow& window) {
+void update() {
 
     sf::Event event;
     while (window.pollEvent(event))
@@ -20,7 +21,7 @@ void update(sf::RenderWindow& window) {
 
 }
 
-void draw(sf::RenderWindow& window, Renderer& renderer) {
+void draw() {
 
     window.clear();
     renderer.render();
@@ -28,19 +29,30 @@ void draw(sf::RenderWindow& window, Renderer& renderer) {
 
 }
 
-void game(){
+void addShapes(){
 
     sf::CircleShape* shape = new sf::CircleShape(100.f);
     shape->setFillColor(sf::Color::Green);
 
     renderer.addShape(shape);
 
+    Button b = Button();
+    shape = b.shape;
+
+    renderer.addShape(shape);
+
+
+}
+
+void game(){
+
+    addShapes();
 
     while (window.isOpen())
     {
 
-        update(window);
-        draw(window, renderer);
+        update();
+        draw();
 
     }
 }

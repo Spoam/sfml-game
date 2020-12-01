@@ -1,10 +1,11 @@
 #include <SFML/Graphics.hpp>
 
-class Button : sf::Shape{
+class Button{
 
     public:
 
         Button();
+        sf::CircleShape* shape;
 
     private:
         double width_;

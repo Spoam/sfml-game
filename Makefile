@@ -1,10 +1,10 @@
 include vars.make
 
-all:$(OBJS)
-	g++ $(OBJS) -o $(EXECNAME) $(SFML)
+all $(EXECNAME):$(OBJS)
+	$(CXX) $(OBJS) -o $(EXECNAME) $(SFML)
 
 $(OBJS):$(SOURCEFILES)
-	g++ -c $(SOURCEFILES) $(HEADERS)
+	$(CXX) -c $(SOURCEFILES) $(HEADERS)
 
 
 clean:
@@ -12,3 +12,6 @@ clean:
 
 run:$(EXECNAME)
 	./$(EXECNAME)
+
+valgrind-run:clean $(EXECNAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(EXECNAME)

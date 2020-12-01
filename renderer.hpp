@@ -7,7 +7,12 @@ class Renderer {
 
         Renderer(sf::RenderWindow& window) : windowRef_(window){};
 
-        void render();
+        ~Renderer();
+
+        Renderer(const Renderer&) = delete;
+        Renderer& operator=(const Renderer&) = delete;
+
+        void render() const;
 
         void addShape(sf::Shape* shape);
 
