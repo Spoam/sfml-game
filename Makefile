@@ -1,11 +1,11 @@
 include vars.make
 
+
 all $(EXECNAME):$(OBJS)
 	$(CXX) $(OBJS) -o $(EXECNAME) $(SFML)
 
 $(OBJS):$(SOURCEFILES)
-	$(CXX) -c $(SOURCEFILES) $(HEADERS)
-
+	$(CXX) -c $(SOURCEFILES)
 
 clean:
 	-rm *.o *.gch $(EXECNAME)

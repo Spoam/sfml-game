@@ -36,10 +36,10 @@ void addShapes(){
 
     renderer.addShape(shape);
 
-    Button b = Button();
-    shape = b.shape;
+    //Button b = Button();
+    //shape = b.shape;
 
-    renderer.addShape(shape);
+    //renderer.addShape(shape);
 
 
 }

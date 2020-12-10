@@ -1,4 +1,6 @@
+#pragma once
 #include <SFML/Graphics.hpp>
+#include "button.hpp"
 
 
 class Renderer {
@@ -21,4 +23,5 @@ class Renderer {
 
         sf::RenderWindow& windowRef_;
         std::vector<sf::Shape*> shapes;
+
 };

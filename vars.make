@@ -1,5 +1,4 @@
-SOURCEFILES=main.cpp button.cpp renderer.cpp
-HEADERS=button.hpp renderer.hpp
+SOURCEFILES=$(wildcard *.cpp)
 EXECNAME=app
-OBJS=main.o button.o renderer.o
+OBJS=$(patsubst %.cpp,%.o,$(SOURCEFILES))
 SFML=-lsfml-graphics -lsfml-window -lsfml-system
